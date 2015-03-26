@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package version="3.0" xmlns="http://www.idpf.org/2007/opf" unique-identifier="BookId">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+    <dc:title>The Sample EPUB</dc:title>
+    <dc:creator>Genji</dc:creator>
+    <dc:language>en-US</dc:language>
+    <dc:rights>©Genji App</dc:rights>
+    <dc:publisher>Genji App</dc:publisher>
+    <dc:identifier id="BookId">urn:uuid:D7398F78-4207-4F82-ACF7-621A767CD5D5</dc:identifier>
+    <dc:date>2015-03-23T13:00:00Z</dc:date>
+    <meta property="dcterms:modified">2015-03-23T13:00:00Z</meta>
+    <dc:description>This is a sample EPUB for testing Spotlight/Quick Look plugins.</dc:description>
+  </metadata>
+  <manifest>
+    <item id="cover-image" properties="cover-image" href="cover-image.png" media-type="image/png"/>
+    <item id="cover-page" href="cover-page.xhtml" media-type="application/xhtml+xml"/>
+    <item id="nav" properties="nav" href="nav.xhtml" media-type="application/xhtml+xml"/>
+    <item id="chapter1" href="chapter1.xhtml" media-type="application/xhtml+xml"/>
+    <item id="chapter2" href="chapter2.xhtml" media-type="application/xhtml+xml"/>
+    <item id="chapter3" href="chapter3.xhtml" media-type="application/xhtml+xml"/>
+  </manifest>
+  <spine>
+    <itemref idref="cover-page"/>
+    <itemref idref="nav"/>
+    <itemref idref="chapter1"/>
+    <itemref idref="chapter2"/>
+    <itemref idref="chapter3"/>
+  </spine>
+</package>

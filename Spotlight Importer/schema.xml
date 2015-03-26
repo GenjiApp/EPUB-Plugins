@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema version="1.0" xmlns="http://www.apple.com/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.apple.com/metadata file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Resources/MetadataSchema.xsd">
+
+  <!-- "attributes" element must exist in schema.xml file even if mdimporter doesn't support any custom attributes. if it doesn't exist, the metadata which are listed by "displayattrs" elements aren't displayed by Finder's "Get Info" panel (in OS X 10.10.2). -->
+  <!-- "attributes" 要素は、たとえカスタム属性を定義していなくても、このファイルに存在していなければならない。存在していないと、後述の "displayattrs" 要素に属性を列挙してあっても Finder の「情報を見る」パネルに表示されない問題がある（OS X 10.10.2）。 -->
+  <attributes>
+    <attribute name="com_genjiapp_Murasaki_mdimporter_EPUB_EPUBVersion" multivalued="false" type="CFString"/>
+  </attributes>
+
+  <types>
+    <type name="org.idpf.epub-container">
+
+      <allattrs>
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemKeywords
+        kMDItemDescription
+        kMDItemHeadline
+        kMDItemPublishers
+        kMDItemOrganizations
+        kMDItemContributors
+        kMDItemIdentifier
+        kMDItemLanguages
+        kMDItemCoverage
+        kMDItemCopyright
+        kMDItemRights
+        kMDItemTextContent
+        kMDItemNumberOfPages
+        kMDItemContentCreationDate
+        kMDItemContentModificationDate
+        com_genjiapp_Murasaki_mdimporter_EPUB_EPUBVersion
+      </allattrs>
+
+      <displayattrs>
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemContributors
+        kMDItemPublishers
+        kMDItemCopyright
+        kMDItemLanguages
+        kMDItemNumberOfPages
+        kMDItemKeywords
+        com_genjiapp_Murasaki_mdimporter_EPUB_EPUBVersion
+        kMDItemIdentifier
+        kMDItemContentCreationDate
+        kMDItemContentModificationDate
+        kMDItemDescription
+      </displayattrs>
+
+    </type>
+  </types>
+</schema>
+

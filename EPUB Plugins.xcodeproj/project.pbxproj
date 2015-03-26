@@ -1,0 +1,701 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B66A9F801ABFE78000B8ED9A /* GNJEPUBMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = B66A9F7F1ABFE78000B8ED9A /* GNJEPUBMetadata.m */; };
+		B66A9F841AC0416200B8ED9A /* GNJUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B66A9F821AC0416200B8ED9A /* GNJUtilities.m */; };
+		B66A9F851AC0416200B8ED9A /* GNJUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B66A9F821AC0416200B8ED9A /* GNJUtilities.m */; };
+		B673C1971AA5D914007A316F /* schema.xml in Resources */ = {isa = PBXBuildFile; fileRef = B673C1961AA5D914007A316F /* schema.xml */; };
+		B673C1B41AA7F1D6007A316F /* GNJEPUB.m in Sources */ = {isa = PBXBuildFile; fileRef = B692E8431AA5A81A00BEBA6B /* GNJEPUB.m */; };
+		B673C1B51AA7F1FD007A316F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B692E86D1AA5CC7000BEBA6B /* libz.dylib */; };
+		B673C1B61AA7F2C2007A316F /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = B692E8731AA5CE1300BEBA6B /* ioapi.c */; };
+		B673C1B71AA7F2C2007A316F /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = B692E8751AA5CE1300BEBA6B /* unzip.c */; };
+		B673C1B81AA7F4E9007A316F /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = B692E8731AA5CE1300BEBA6B /* ioapi.c */; };
+		B673C1B91AA7F4E9007A316F /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = B692E8751AA5CE1300BEBA6B /* unzip.c */; };
+		B673C1BA1AA7F4EE007A316F /* GNJEPUB.m in Sources */ = {isa = PBXBuildFile; fileRef = B692E8431AA5A81A00BEBA6B /* GNJEPUB.m */; };
+		B673C1BB1AA825B1007A316F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B692E86D1AA5CC7000BEBA6B /* libz.dylib */; };
+		B6767F181AC484B8006B4E1C /* GNJEPUBMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = B66A9F7F1ABFE78000B8ED9A /* GNJEPUBMetadata.m */; };
+		B692E79B1AA5967C00BEBA6B /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = B692E79A1AA5967C00BEBA6B /* main.c */; };
+		B692E79D1AA5967C00BEBA6B /* GetMetadataForFile.m in Sources */ = {isa = PBXBuildFile; fileRef = B692E79C1AA5967C00BEBA6B /* GetMetadataForFile.m */; };
+		B692E7AF1AA596E000BEBA6B /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = B692E7AE1AA596E000BEBA6B /* GenerateThumbnailForURL.m */; };
+		B692E7B11AA596E000BEBA6B /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = B692E7B01AA596E000BEBA6B /* GeneratePreviewForURL.m */; };
+		B692E7B31AA596E000BEBA6B /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = B692E7B21AA596E000BEBA6B /* main.c */; };
+		B69DF62D1ACBD23000DA47E8 /* GNJUnZip.m in Sources */ = {isa = PBXBuildFile; fileRef = B69DF62C1ACBD23000DA47E8 /* GNJUnZip.m */; };
+		B69DF62E1ACBD2A700DA47E8 /* GNJUnZip.m in Sources */ = {isa = PBXBuildFile; fileRef = B69DF62C1ACBD23000DA47E8 /* GNJUnZip.m */; };
+		B69DF6311ACDACDC00DA47E8 /* GNJEPUBManifestItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B69DF6301ACDACDC00DA47E8 /* GNJEPUBManifestItem.m */; };
+		B69DF6321ACDB5E600DA47E8 /* GNJEPUBManifestItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B69DF6301ACDACDC00DA47E8 /* GNJEPUBManifestItem.m */; };
+		B6C5ADFB1ACA6F2A006FCF41 /* schema.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6C5ADFD1ACA6F2A006FCF41 /* schema.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B608114B1AB0810B00C98C17 /* GNJEPUB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNJEPUB.h; sourceTree = "<group>"; };
+		B66A9F7E1ABFE78000B8ED9A /* GNJEPUBMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNJEPUBMetadata.h; sourceTree = "<group>"; };
+		B66A9F7F1ABFE78000B8ED9A /* GNJEPUBMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNJEPUBMetadata.m; sourceTree = "<group>"; };
+		B66A9F811AC0416200B8ED9A /* GNJUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNJUtilities.h; sourceTree = "<group>"; };
+		B66A9F821AC0416200B8ED9A /* GNJUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNJUtilities.m; sourceTree = "<group>"; };
+		B66A9F911AC1086100B8ED9A /* container.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = container.xml; sourceTree = "<group>"; };
+		B66A9F921AC1086100B8ED9A /* mimetype */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mimetype; sourceTree = "<group>"; };
+		B66A9F941AC1086100B8ED9A /* chapter1.xhtml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = chapter1.xhtml; sourceTree = "<group>"; };
+		B66A9F951AC1086100B8ED9A /* chapter2.xhtml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = chapter2.xhtml; sourceTree = "<group>"; };
+		B66A9F961AC1086100B8ED9A /* chapter3.xhtml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = chapter3.xhtml; sourceTree = "<group>"; };
+		B66A9F971AC1086100B8ED9A /* cover-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cover-image.png"; sourceTree = "<group>"; };
+		B66A9F981AC1086100B8ED9A /* cover-page.xhtml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "cover-page.xhtml"; sourceTree = "<group>"; };
+		B66A9F991AC1086100B8ED9A /* nav.xhtml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = nav.xhtml; sourceTree = "<group>"; };
+		B66A9F9A1AC1086100B8ED9A /* package.opf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = package.opf; sourceTree = "<group>"; };
+		B66A9F9B1AC1088C00B8ED9A /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		B673C1961AA5D914007A316F /* schema.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = schema.xml; sourceTree = "<group>"; };
+		B692E7961AA5967B00BEBA6B /* EPUB.mdimporter */ = {isa = PBXFileReference; explicitFileType = "wrapper.spotlight-importer"; includeInIndex = 0; path = EPUB.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
+		B692E7991AA5967C00BEBA6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B692E79A1AA5967C00BEBA6B /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		B692E79C1AA5967C00BEBA6B /* GetMetadataForFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMetadataForFile.m; sourceTree = "<group>"; };
+		B692E7AA1AA596E000BEBA6B /* EPUB.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EPUB.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
+		B692E7AD1AA596E000BEBA6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B692E7AE1AA596E000BEBA6B /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
+		B692E7B01AA596E000BEBA6B /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
+		B692E7B21AA596E000BEBA6B /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		B692E8411AA5A81A00BEBA6B /* GNJUnZip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GNJUnZip.h; sourceTree = "<group>"; };
+		B692E8431AA5A81A00BEBA6B /* GNJEPUB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GNJEPUB.m; sourceTree = "<group>"; };
+		B692E86D1AA5CC7000BEBA6B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		B692E8731AA5CE1300BEBA6B /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		B692E8741AA5CE1300BEBA6B /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		B692E8751AA5CE1300BEBA6B /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		B692E8761AA5CE1300BEBA6B /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		B692E87B1AA5CE2800BEBA6B /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		B69DF62C1ACBD23000DA47E8 /* GNJUnZip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNJUnZip.m; sourceTree = "<group>"; };
+		B69DF62F1ACDACDC00DA47E8 /* GNJEPUBManifestItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNJEPUBManifestItem.h; sourceTree = "<group>"; };
+		B69DF6301ACDACDC00DA47E8 /* GNJEPUBManifestItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNJEPUBManifestItem.m; sourceTree = "<group>"; };
+		B6C5ADFC1ACA6F2A006FCF41 /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/schema.strings; sourceTree = "<group>"; };
+		B6C5ADFE1ACA6F92006FCF41 /* ja */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/schema.strings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B692E7931AA5967B00BEBA6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B673C1B51AA7F1FD007A316F /* libz.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B692E7A61AA596E000BEBA6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B673C1BB1AA825B1007A316F /* libz.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B608114A1AB0806300C98C17 /* GNJ Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B692E86D1AA5CC7000BEBA6B /* libz.dylib */,
+				B692E86A1AA5A90200BEBA6B /* minizip */,
+				B692E8411AA5A81A00BEBA6B /* GNJUnZip.h */,
+				B69DF62C1ACBD23000DA47E8 /* GNJUnZip.m */,
+				B608114B1AB0810B00C98C17 /* GNJEPUB.h */,
+				B692E8431AA5A81A00BEBA6B /* GNJEPUB.m */,
+				B69DF62F1ACDACDC00DA47E8 /* GNJEPUBManifestItem.h */,
+				B69DF6301ACDACDC00DA47E8 /* GNJEPUBManifestItem.m */,
+				B66A9F7E1ABFE78000B8ED9A /* GNJEPUBMetadata.h */,
+				B66A9F7F1ABFE78000B8ED9A /* GNJEPUBMetadata.m */,
+				B66A9F811AC0416200B8ED9A /* GNJUtilities.h */,
+				B66A9F821AC0416200B8ED9A /* GNJUtilities.m */,
+			);
+			path = "GNJ Utilities";
+			sourceTree = "<group>";
+		};
+		B66A9F8E1AC1086100B8ED9A /* Test EPUB */ = {
+			isa = PBXGroup;
+			children = (
+				B66A9F901AC1086100B8ED9A /* META-INF */,
+				B66A9F931AC1086100B8ED9A /* OEBPS */,
+				B66A9F921AC1086100B8ED9A /* mimetype */,
+				B66A9F9B1AC1088C00B8ED9A /* Makefile */,
+			);
+			path = "Test EPUB";
+			sourceTree = "<group>";
+		};
+		B66A9F901AC1086100B8ED9A /* META-INF */ = {
+			isa = PBXGroup;
+			children = (
+				B66A9F911AC1086100B8ED9A /* container.xml */,
+			);
+			path = "META-INF";
+			sourceTree = "<group>";
+		};
+		B66A9F931AC1086100B8ED9A /* OEBPS */ = {
+			isa = PBXGroup;
+			children = (
+				B66A9F941AC1086100B8ED9A /* chapter1.xhtml */,
+				B66A9F951AC1086100B8ED9A /* chapter2.xhtml */,
+				B66A9F961AC1086100B8ED9A /* chapter3.xhtml */,
+				B66A9F971AC1086100B8ED9A /* cover-image.png */,
+				B66A9F981AC1086100B8ED9A /* cover-page.xhtml */,
+				B66A9F991AC1086100B8ED9A /* nav.xhtml */,
+				B66A9F9A1AC1086100B8ED9A /* package.opf */,
+			);
+			path = OEBPS;
+			sourceTree = "<group>";
+		};
+		B692E71A1AA5791500BEBA6B = {
+			isa = PBXGroup;
+			children = (
+				B608114A1AB0806300C98C17 /* GNJ Utilities */,
+				B692E7971AA5967C00BEBA6B /* Spotlight Importer */,
+				B692E7AB1AA596E000BEBA6B /* Quick Look Generator */,
+				B66A9F8E1AC1086100B8ED9A /* Test EPUB */,
+				B692E7261AA5793500BEBA6B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B692E7261AA5793500BEBA6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B692E7961AA5967B00BEBA6B /* EPUB.mdimporter */,
+				B692E7AA1AA596E000BEBA6B /* EPUB.qlgenerator */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B692E7971AA5967C00BEBA6B /* Spotlight Importer */ = {
+			isa = PBXGroup;
+			children = (
+				B692E79C1AA5967C00BEBA6B /* GetMetadataForFile.m */,
+				B692E7981AA5967C00BEBA6B /* Supporting Files */,
+			);
+			path = "Spotlight Importer";
+			sourceTree = "<group>";
+		};
+		B692E7981AA5967C00BEBA6B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B673C1961AA5D914007A316F /* schema.xml */,
+				B6C5ADFD1ACA6F2A006FCF41 /* schema.strings */,
+				B692E7991AA5967C00BEBA6B /* Info.plist */,
+				B692E79A1AA5967C00BEBA6B /* main.c */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B692E7AB1AA596E000BEBA6B /* Quick Look Generator */ = {
+			isa = PBXGroup;
+			children = (
+				B692E7AE1AA596E000BEBA6B /* GenerateThumbnailForURL.m */,
+				B692E7B01AA596E000BEBA6B /* GeneratePreviewForURL.m */,
+				B692E7B21AA596E000BEBA6B /* main.c */,
+				B692E7AC1AA596E000BEBA6B /* Supporting Files */,
+			);
+			path = "Quick Look Generator";
+			sourceTree = "<group>";
+		};
+		B692E7AC1AA596E000BEBA6B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B692E7AD1AA596E000BEBA6B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B692E86A1AA5A90200BEBA6B /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				B692E87B1AA5CE2800BEBA6B /* crypt.h */,
+				B692E8731AA5CE1300BEBA6B /* ioapi.c */,
+				B692E8741AA5CE1300BEBA6B /* ioapi.h */,
+				B692E8751AA5CE1300BEBA6B /* unzip.c */,
+				B692E8761AA5CE1300BEBA6B /* unzip.h */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B692E7A71AA596E000BEBA6B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXLegacyTarget section */
+		B66A9F8A1AC107CC00B8ED9A /* Test EPUB */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = B66A9F8B1AC107CC00B8ED9A /* Build configuration list for PBXLegacyTarget "Test EPUB" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "$(SRCROOT)/Test EPUB";
+			dependencies = (
+			);
+			name = "Test EPUB";
+			passBuildSettingsInEnvironment = 1;
+			productName = "Test EPUB";
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		B692E7951AA5967B00BEBA6B /* Spotlight Importer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B692E7A21AA5967C00BEBA6B /* Build configuration list for PBXNativeTarget "Spotlight Importer" */;
+			buildPhases = (
+				B692E7921AA5967B00BEBA6B /* Sources */,
+				B692E7931AA5967B00BEBA6B /* Frameworks */,
+				B692E7941AA5967B00BEBA6B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Spotlight Importer";
+			productName = "Spotlight Importer";
+			productReference = B692E7961AA5967B00BEBA6B /* EPUB.mdimporter */;
+			productType = "com.apple.product-type.spotlight-importer";
+		};
+		B692E7A91AA596E000BEBA6B /* Quick Look Generator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B692E7B41AA596E000BEBA6B /* Build configuration list for PBXNativeTarget "Quick Look Generator" */;
+			buildPhases = (
+				B692E7A51AA596E000BEBA6B /* Sources */,
+				B692E7A61AA596E000BEBA6B /* Frameworks */,
+				B692E7A71AA596E000BEBA6B /* Headers */,
+				B692E7A81AA596E000BEBA6B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Quick Look Generator";
+			productName = "Quick Look Generator";
+			productReference = B692E7AA1AA596E000BEBA6B /* EPUB.qlgenerator */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B692E71B1AA5791500BEBA6B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				TargetAttributes = {
+					B66A9F8A1AC107CC00B8ED9A = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					B692E7951AA5967B00BEBA6B = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					B692E7A91AA596E000BEBA6B = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = B692E71E1AA5791500BEBA6B /* Build configuration list for PBXProject "EPUB Plugins" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				ja,
+			);
+			mainGroup = B692E71A1AA5791500BEBA6B;
+			productRefGroup = B692E7261AA5793500BEBA6B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B692E7951AA5967B00BEBA6B /* Spotlight Importer */,
+				B692E7A91AA596E000BEBA6B /* Quick Look Generator */,
+				B66A9F8A1AC107CC00B8ED9A /* Test EPUB */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B692E7941AA5967B00BEBA6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B673C1971AA5D914007A316F /* schema.xml in Resources */,
+				B6C5ADFB1ACA6F2A006FCF41 /* schema.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B692E7A81AA596E000BEBA6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B692E7921AA5967B00BEBA6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B673C1B41AA7F1D6007A316F /* GNJEPUB.m in Sources */,
+				B673C1B71AA7F2C2007A316F /* unzip.c in Sources */,
+				B69DF62D1ACBD23000DA47E8 /* GNJUnZip.m in Sources */,
+				B69DF6311ACDACDC00DA47E8 /* GNJEPUBManifestItem.m in Sources */,
+				B692E79B1AA5967C00BEBA6B /* main.c in Sources */,
+				B66A9F801ABFE78000B8ED9A /* GNJEPUBMetadata.m in Sources */,
+				B673C1B61AA7F2C2007A316F /* ioapi.c in Sources */,
+				B692E79D1AA5967C00BEBA6B /* GetMetadataForFile.m in Sources */,
+				B66A9F841AC0416200B8ED9A /* GNJUtilities.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B692E7A51AA596E000BEBA6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B673C1BA1AA7F4EE007A316F /* GNJEPUB.m in Sources */,
+				B692E7AF1AA596E000BEBA6B /* GenerateThumbnailForURL.m in Sources */,
+				B673C1B91AA7F4E9007A316F /* unzip.c in Sources */,
+				B69DF62E1ACBD2A700DA47E8 /* GNJUnZip.m in Sources */,
+				B692E7B11AA596E000BEBA6B /* GeneratePreviewForURL.m in Sources */,
+				B69DF6321ACDB5E600DA47E8 /* GNJEPUBManifestItem.m in Sources */,
+				B673C1B81AA7F4E9007A316F /* ioapi.c in Sources */,
+				B692E7B31AA596E000BEBA6B /* main.c in Sources */,
+				B66A9F851AC0416200B8ED9A /* GNJUtilities.m in Sources */,
+				B6767F181AC484B8006B4E1C /* GNJEPUBMetadata.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B6C5ADFD1ACA6F2A006FCF41 /* schema.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6C5ADFC1ACA6F2A006FCF41 /* en */,
+				B6C5ADFE1ACA6F92006FCF41 /* ja */,
+			);
+			name = schema.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B66A9F8C1AC107CC00B8ED9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B66A9F8D1AC107CC00B8ED9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B692E71F1AA5791500BEBA6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		B692E7201AA5791500BEBA6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		B692E7A31AA5967C00BEBA6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Spotlight Importer/Info.plist";
+				INSTALL_PATH = /Library/Spotlight;
+				LIBRARY_STYLE = BUNDLE;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = EPUB;
+				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = mdimporter;
+			};
+			name = Debug;
+		};
+		B692E7A41AA5967C00BEBA6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Spotlight Importer/Info.plist";
+				INSTALL_PATH = /Library/Spotlight;
+				LIBRARY_STYLE = BUNDLE;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = EPUB;
+				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = mdimporter;
+			};
+			name = Release;
+		};
+		B692E7B51AA596E000BEBA6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Quick Look Generator/Info.plist";
+				INSTALL_PATH = /Library/QuickLook;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = EPUB;
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = qlgenerator;
+			};
+			name = Debug;
+		};
+		B692E7B61AA596E000BEBA6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Quick Look Generator/Info.plist";
+				INSTALL_PATH = /Library/QuickLook;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = EPUB;
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = qlgenerator;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B66A9F8B1AC107CC00B8ED9A /* Build configuration list for PBXLegacyTarget "Test EPUB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B66A9F8C1AC107CC00B8ED9A /* Debug */,
+				B66A9F8D1AC107CC00B8ED9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B692E71E1AA5791500BEBA6B /* Build configuration list for PBXProject "EPUB Plugins" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B692E71F1AA5791500BEBA6B /* Debug */,
+				B692E7201AA5791500BEBA6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B692E7A21AA5967C00BEBA6B /* Build configuration list for PBXNativeTarget "Spotlight Importer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B692E7A31AA5967C00BEBA6B /* Debug */,
+				B692E7A41AA5967C00BEBA6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B692E7B41AA596E000BEBA6B /* Build configuration list for PBXNativeTarget "Quick Look Generator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B692E7B51AA596E000BEBA6B /* Debug */,
+				B692E7B61AA596E000BEBA6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B692E71B1AA5791500BEBA6B /* Project object */;
+}
