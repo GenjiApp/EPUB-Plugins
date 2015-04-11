@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6282A7D1AD915E600A7A2A3 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = B6282A7C1AD915E600A7A2A3 /* Readme.md */; };
 		B66A9F801ABFE78000B8ED9A /* GNJEPUBMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = B66A9F7F1ABFE78000B8ED9A /* GNJEPUBMetadata.m */; };
 		B66A9F841AC0416200B8ED9A /* GNJUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B66A9F821AC0416200B8ED9A /* GNJUtilities.m */; };
 		B66A9F851AC0416200B8ED9A /* GNJUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B66A9F821AC0416200B8ED9A /* GNJUtilities.m */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		B608114B1AB0810B00C98C17 /* GNJEPUB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNJEPUB.h; sourceTree = "<group>"; };
+		B6282A7C1AD915E600A7A2A3 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		B66A9F7E1ABFE78000B8ED9A /* GNJEPUBMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNJEPUBMetadata.h; sourceTree = "<group>"; };
 		B66A9F7F1ABFE78000B8ED9A /* GNJEPUBMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNJEPUBMetadata.m; sourceTree = "<group>"; };
 		B66A9F811AC0416200B8ED9A /* GNJUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNJUtilities.h; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		B692E71A1AA5791500BEBA6B = {
 			isa = PBXGroup;
 			children = (
+				B6282A7C1AD915E600A7A2A3 /* Readme.md */,
 				B608114A1AB0806300C98C17 /* GNJ Utilities */,
 				B692E7971AA5967C00BEBA6B /* Spotlight Importer */,
 				B692E7AB1AA596E000BEBA6B /* Quick Look Generator */,
@@ -344,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6282A7D1AD915E600A7A2A3 /* Readme.md in Sources */,
 				B673C1B41AA7F1D6007A316F /* GNJEPUB.m in Sources */,
 				B673C1B71AA7F2C2007A316F /* unzip.c in Sources */,
 				B69DF62D1ACBD23000DA47E8 /* GNJUnZip.m in Sources */,
