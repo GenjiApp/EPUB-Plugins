@@ -256,13 +256,13 @@ static NSXMLElement *generateDivElementOfXHTMLContentDocument(QLPreviewRequestRe
         }
         if(!cssPath.absolutePath) {
           cssPath = [basePath stringByAppendingPathComponent:cssPath];
-          NSData *cssData = [epub dataWithContentsOfFile:cssPath];
-          if(!cssData) {
-            continue;
-          }
-          NSString *styleDeclaration = [[NSString alloc] initWithData:cssData encoding:NSUTF8StringEncoding];
-          [styleDeclarations appendString:styleDeclaration];
         }
+        NSData *cssData = [epub dataWithContentsOfFile:cssPath];
+        if(!cssData) {
+          continue;
+        }
+        NSString *styleDeclaration = [[NSString alloc] initWithData:cssData encoding:NSUTF8StringEncoding];
+        [styleDeclarations appendString:styleDeclaration];
       }
     }
 
