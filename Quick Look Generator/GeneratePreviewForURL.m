@@ -23,6 +23,8 @@ static const NSUInteger kMaxLenghOfContents = 1024 * 1024;
 /**
  * Returns a <div> element contains child element nodes of content document's <body> element.
  *
+ * スタイル関係の記述は <style scoped> に纏めて <div> の中に埋め込む。
+ *
  * @param preview `QLPreviewRequest` object which is used to cancel previewing.
  * @param XHTMLContentDocumentData The contents data of the content document.
  * @param epub an EPUB object.
@@ -31,7 +33,7 @@ static const NSUInteger kMaxLenghOfContents = 1024 * 1024;
  * @param additionalResourceDataLength Upon returns, contains the number of bytes of the additional resources (i.e. images) contained in the content document.
  * @return a <div> element contains child element nodes of content document's <body> element.
  */
-static NSXMLElement *getXMLElementOfXHTMLContentDocument(QLPreviewRequestRef preview, NSData *XHTMLContentDocumentData, GNJEPUB *epub, NSString *basePath, NSMutableDictionary *attachments, NSUInteger *additionalResourceDataLength);
+static NSXMLElement *generateDivElementOfXHTMLContentDocument(QLPreviewRequestRef preview, NSData *XHTMLContentDocumentData, GNJEPUB *epub, NSString *basePath, NSMutableDictionary *attachments, NSUInteger *additionalResourceDataLength);
 
 /**
  * Returns a <div> element contains an <img> element.
@@ -39,7 +41,7 @@ static NSXMLElement *getXMLElementOfXHTMLContentDocument(QLPreviewRequestRef pre
  * @param imagePath an image path.
  * @return a <div> element contains an <img> element.
  */
-static NSXMLElement *getXMLElementOfImageContentDocument(NSString *imagePath);
+static NSXMLElement *generateDivElementOfImageContentDocument(NSString *imagePath);
 
 OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options);
 void CancelPreviewGeneration(void *thisInterface, QLPreviewRequestRef preview);
@@ -95,10 +97,10 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
            [mediaType isEqualToString:@"application/xml"] ||
            [mediaType isEqualToString:@"text/html"]) {
           NSString *basePath = [item.path stringByDeletingLastPathComponent];
-          contentDocumentNode = getXMLElementOfXHTMLContentDocument(preview, contentDocumentData, epub, basePath, attachments, &additionalDataLength);
+          contentDocumentNode = generateDivElementOfXHTMLContentDocument(preview, contentDocumentData, epub, basePath, attachments, &additionalDataLength);
         }
         else if([mediaType hasPrefix:@"image/"]) {
-          contentDocumentNode = getXMLElementOfImageContentDocument(item.path);
+          contentDocumentNode = generateDivElementOfImageContentDocument(item.path);
           NSDictionary *attachment = @{(__bridge NSString *)kQLPreviewPropertyMIMETypeKey: item.mediaType,
                                        (__bridge NSString *)kQLPreviewPropertyAttachmentDataKey: contentDocumentData};
           attachments[item.path] = attachment;
@@ -155,7 +157,7 @@ void CancelPreviewGeneration(void *thisInterface, QLPreviewRequestRef preview)
 
 #pragma mark -
 #pragma mark Static Functions
-static NSXMLElement *getXMLElementOfXHTMLContentDocument(QLPreviewRequestRef preview, NSData *contentDocumentData, GNJEPUB *epub, NSString *basePath, NSMutableDictionary *attachments, NSUInteger *additionalResourceDataLength)
+static NSXMLElement *generateDivElementOfXHTMLContentDocument(QLPreviewRequestRef preview, NSData *contentDocumentData, GNJEPUB *epub, NSString *basePath, NSMutableDictionary *attachments, NSUInteger *additionalResourceDataLength)
 {
   if(!contentDocumentData) {
     return nil;
@@ -179,10 +181,10 @@ static NSXMLElement *getXMLElementOfXHTMLContentDocument(QLPreviewRequestRef pre
 
     xpath = @"//*[local-name()='img']/@*[local-name()='src']"
     @"|//*[local-name()='svg']/*[local-name()='image']/@*[local-name()='href']";
-    NSArray *additionalResourceNodes = [bodyElement nodesForXPath:xpath error:NULL];
-    for(NSXMLNode *additionalResourceNode in additionalResourceNodes) {
+    NSArray *referenceAttributeNodes = [bodyElement nodesForXPath:xpath error:NULL];
+    for(NSXMLNode *referenceAttributeNode in referenceAttributeNodes) {
       @autoreleasepool {
-        NSString *additionalResourcePath = [additionalResourceNode.stringValue stringByTrimmingCharactersInSet:whitespaceAndNewlineCharacterSet];
+        NSString *additionalResourcePath = [referenceAttributeNode.stringValue stringByTrimmingCharactersInSet:whitespaceAndNewlineCharacterSet];
         additionalResourcePath = [additionalResourcePath stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         if(!additionalResourcePath.length) {
           continue;
@@ -208,7 +210,7 @@ static NSXMLElement *getXMLElementOfXHTMLContentDocument(QLPreviewRequestRef pre
           continue;
         }
 
-        additionalResourceNode.stringValue = [NSString stringWithFormat:@"%@:%@", (__bridge NSString *)kQLPreviewContentIDScheme, additionalResourcePath];
+        referenceAttributeNode.stringValue = [NSString stringWithFormat:@"%@:%@", (__bridge NSString *)kQLPreviewContentIDScheme, additionalResourcePath];
         NSDictionary *attachment = @{(__bridge NSString *)kQLPreviewPropertyMIMETypeKey: mediaType,
                                      (__bridge NSString *)kQLPreviewPropertyAttachmentDataKey: additionalResourceData};
         attachments[additionalResourcePath] = attachment;
@@ -240,13 +242,13 @@ static NSXMLElement *getXMLElementOfXHTMLContentDocument(QLPreviewRequestRef pre
     xpath = @"//*[local-name()='head']/*[local-name()='link' and @rel='stylesheet']"
     @"|//*[local-name()='style' and not(@scoped)]";
     NSArray *styleRelatedNodes = [contentDocumentXMLDocument nodesForXPath:xpath error:NULL];
-    for(NSXMLNode *node in styleRelatedNodes) {
-      NSString *nodeName = node.localName;
+    for(NSXMLNode *styleRelatedNode in styleRelatedNodes) {
+      NSString *nodeName = styleRelatedNode.localName;
       if([nodeName isEqualToString:@"style"]) {
-        [styleDeclarations appendString:node.stringValue];
+        [styleDeclarations appendString:styleRelatedNode.stringValue];
       }
       else if([nodeName isEqualToString:@"link"] && epub) {
-        NSXMLNode *hrefAttributeNode = [node gnj_attributeNodeForLocalName:@"href"];
+        NSXMLNode *hrefAttributeNode = [styleRelatedNode gnj_attributeNodeForLocalName:@"href"];
         NSString *cssPath = [hrefAttributeNode.stringValue stringByTrimmingCharactersInSet:whitespaceAndNewlineCharacterSet];
         cssPath = [cssPath stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         if(!cssPath.length) {
@@ -278,7 +280,7 @@ static NSXMLElement *getXMLElementOfXHTMLContentDocument(QLPreviewRequestRef pre
   return bodyElement;
 }
 
-static NSXMLElement *getXMLElementOfImageContentDocument(NSString *imagePath)
+static NSXMLElement *generateDivElementOfImageContentDocument(NSString *imagePath)
 {
   if(!imagePath.length) {
     return nil;
