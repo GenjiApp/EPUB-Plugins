@@ -23,27 +23,23 @@ static const NSUInteger kMaxLenghOfContents = 1024 * 1024;
 /**
  * Returns a <div> element contains child element nodes of content document's <body> element.
  *
- * The additional resources (i.e. images) are embedded by encoding base-64.
- *
  * @param preview `QLPreviewRequest` object which is used to cancel previewing.
  * @param XHTMLContentDocumentData The contents data of the content document.
  * @param epub an EPUB object.
  * @param basePath The base path of the content document.
+ * @param attachments The dictionary stores the additional resources data.
  * @param additionalResourceDataLength Upon returns, contains the number of bytes of the additional resources (i.e. images) contained in the content document.
  * @return a <div> element contains child element nodes of content document's <body> element.
  */
-static NSXMLElement *getXMLElementOfXHTMLContentDocument(QLPreviewRequestRef preview, NSData *XHTMLContentDocumentData, GNJEPUB *epub, NSString *basePath, NSUInteger *additionalResourceDataLength);
+static NSXMLElement *getXMLElementOfXHTMLContentDocument(QLPreviewRequestRef preview, NSData *XHTMLContentDocumentData, GNJEPUB *epub, NSString *basePath, NSMutableDictionary *attachments, NSUInteger *additionalResourceDataLength);
 
 /**
  * Returns a <div> element contains an <img> element.
  *
- * The contained <img> element embeds an image data encoded base-64.
- *
- * @param imageData an image data embedded by an <img> element.
- * @param mediaType a mime media type string of image.
+ * @param imagePath an image path.
  * @return a <div> element contains an <img> element.
  */
-static NSXMLElement *getXMLElementOfImageContentDocument(NSData *imageData, NSString *mediaType);
+static NSXMLElement *getXMLElementOfImageContentDocument(NSString *imagePath);
 
 OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options);
 void CancelPreviewGeneration(void *thisInterface, QLPreviewRequestRef preview);
@@ -80,6 +76,7 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
       return noErr;
     }
 
+    NSMutableDictionary *attachments = [NSMutableDictionary dictionary];
     NSUInteger currentLengthOfContents = 0;
     NSXMLElement *bodyElement = [NSXMLElement elementWithName:@"body"];
     for(GNJEPUBManifestItem *item in epub.spineItems) {
@@ -98,10 +95,13 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
            [mediaType isEqualToString:@"application/xml"] ||
            [mediaType isEqualToString:@"text/html"]) {
           NSString *basePath = [item.path stringByDeletingLastPathComponent];
-          contentDocumentNode = getXMLElementOfXHTMLContentDocument(preview, contentDocumentData, epub, basePath, &additionalDataLength);
+          contentDocumentNode = getXMLElementOfXHTMLContentDocument(preview, contentDocumentData, epub, basePath, attachments, &additionalDataLength);
         }
         else if([mediaType hasPrefix:@"image/"]) {
-          contentDocumentNode = getXMLElementOfImageContentDocument(contentDocumentData, mediaType);
+          contentDocumentNode = getXMLElementOfImageContentDocument(item.path);
+          NSDictionary *attachment = @{(__bridge NSString *)kQLPreviewPropertyMIMETypeKey: item.mediaType,
+                                       (__bridge NSString *)kQLPreviewPropertyAttachmentDataKey: contentDocumentData};
+          attachments[item.path] = attachment;
         }
 
         if(contentDocumentNode) {
@@ -136,6 +136,7 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
     NSMutableDictionary *properties = [NSMutableDictionary dictionary];
     properties[(__bridge NSString *)kQLPreviewPropertyMIMETypeKey] = @"text/html";
     properties[(__bridge NSString *)kQLPreviewPropertyTextEncodingNameKey] = @"UTF-8";
+    properties[(__bridge NSString *)kQLPreviewPropertyAttachmentsKey] = attachments;
     NSString *title = [epub.metadata.titles firstObject];
     if(title.length) {
       properties[(__bridge NSString *)kQLPreviewPropertyDisplayNameKey] = title;
@@ -154,7 +155,7 @@ void CancelPreviewGeneration(void *thisInterface, QLPreviewRequestRef preview)
 
 #pragma mark -
 #pragma mark Static Functions
-static NSXMLElement *getXMLElementOfXHTMLContentDocument(QLPreviewRequestRef preview, NSData *contentDocumentData, GNJEPUB *epub, NSString *basePath, NSUInteger *additionalResourceDataLength)
+static NSXMLElement *getXMLElementOfXHTMLContentDocument(QLPreviewRequestRef preview, NSData *contentDocumentData, GNJEPUB *epub, NSString *basePath, NSMutableDictionary *attachments, NSUInteger *additionalResourceDataLength)
 {
   if(!contentDocumentData) {
     return nil;
@@ -176,11 +177,6 @@ static NSXMLElement *getXMLElementOfXHTMLContentDocument(QLPreviewRequestRef pre
       *additionalResourceDataLength = 0;
     }
 
-    // 画像を Base-64 エンコーディングして埋め込む。
-    // Quick Look generator では、画像等は `CFDictionaryRef` に溜め込み、
-    // 要素の参照パスに `cid:` スキームを用いることでデータを添付・参照する手法が
-    // ドキュメントで紹介されているが、いつからか添付画像が表示されなくなっている(OS X 10.10.2)。
-    // そのため、画像等のデータを Base-64 エンコーディング文字列に変換し、HTML に埋め込む手法をとる。
     xpath = @"//*[local-name()='img']/@*[local-name()='src']"
     @"|//*[local-name()='svg']/*[local-name()='image']/@*[local-name()='href']";
     NSArray *additionalResourceNodes = [bodyElement nodesForXPath:xpath error:NULL];
@@ -212,8 +208,10 @@ static NSXMLElement *getXMLElementOfXHTMLContentDocument(QLPreviewRequestRef pre
           continue;
         }
 
-        NSString *base64EncodedString = [additionalResourceData base64EncodedStringWithOptions:0];
-        additionalResourceNode.stringValue = [NSString stringWithFormat:@"data:%@;base64,%@", mediaType, base64EncodedString];
+        additionalResourceNode.stringValue = [NSString stringWithFormat:@"%@:%@", (__bridge NSString *)kQLPreviewContentIDScheme, additionalResourcePath];
+        NSDictionary *attachment = @{(__bridge NSString *)kQLPreviewPropertyMIMETypeKey: mediaType,
+                                     (__bridge NSString *)kQLPreviewPropertyAttachmentDataKey: additionalResourceData};
+        attachments[additionalResourcePath] = attachment;
         if(additionalResourceDataLength) {
           *additionalResourceDataLength += additionalResourceData.length;
           if(*additionalResourceDataLength > kMaxLenghOfContents) {
@@ -280,15 +278,14 @@ static NSXMLElement *getXMLElementOfXHTMLContentDocument(QLPreviewRequestRef pre
   return bodyElement;
 }
 
-static NSXMLElement *getXMLElementOfImageContentDocument(NSData *imageData, NSString *mediaType)
+static NSXMLElement *getXMLElementOfImageContentDocument(NSString *imagePath)
 {
-  if(!imageData || !mediaType.length) {
+  if(!imagePath.length) {
     return nil;
   }
 
-  NSString *base64EncodedString = [imageData base64EncodedStringWithOptions:0];
-  NSString *dataSchemeURLString = [NSString stringWithFormat:@"data:%@;base64,%@", mediaType, base64EncodedString];
-  NSXMLNode *srcAttributeNode = [NSXMLNode attributeWithName:@"src" stringValue:dataSchemeURLString];
+  NSString *path = [NSString stringWithFormat:@"%@:%@", (__bridge NSString *)kQLPreviewContentIDScheme, imagePath];
+  NSXMLNode *srcAttributeNode = [NSXMLNode attributeWithName:@"src" stringValue:path];
   NSXMLNode *styleAttributeNode = [NSXMLNode attributeWithName:@"style" stringValue:@"display: block; margin: 15px auto;"];
   NSXMLElement *imgElement = [NSXMLElement elementWithName:@"img" children:nil attributes:@[srcAttributeNode, styleAttributeNode]];
 
