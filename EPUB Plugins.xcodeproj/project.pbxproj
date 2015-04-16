@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B6282A7D1AD915E600A7A2A3 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = B6282A7C1AD915E600A7A2A3 /* Readme.md */; };
 		B66A9F801ABFE78000B8ED9A /* GNJEPUBMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = B66A9F7F1ABFE78000B8ED9A /* GNJEPUBMetadata.m */; };
 		B66A9F841AC0416200B8ED9A /* GNJUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B66A9F821AC0416200B8ED9A /* GNJUtilities.m */; };
 		B66A9F851AC0416200B8ED9A /* GNJUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B66A9F821AC0416200B8ED9A /* GNJUtilities.m */; };
@@ -347,7 +346,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6282A7D1AD915E600A7A2A3 /* Readme.md in Sources */,
 				B673C1B41AA7F1D6007A316F /* GNJEPUB.m in Sources */,
 				B673C1B71AA7F2C2007A316F /* unzip.c in Sources */,
 				B69DF62D1ACBD23000DA47E8 /* GNJUnZip.m in Sources */,
