@@ -4,7 +4,7 @@ The EPUB Plugins project contains the OS X Spotlight and Quick Look plugins for 
 
 ## System requirements
 
-OS X 10.10+
+OS X 10.6+
 
 ## Download and install plugins
 
