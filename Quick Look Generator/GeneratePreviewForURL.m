@@ -66,8 +66,7 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
     // Finder の「情報を見る」や Cover Flow 表示のときは、ここでプレヴューを生成しなくても
     // アイコン用のサムネイル生成処理が走るようだ。
     GNJQLPreviewMode previewMode = [[(__bridge NSDictionary *)options objectForKey:kGNJQLPreviewModeKey] integerValue];
-    if(previewMode == kGNJQLPreviewModeNone ||
-       previewMode == kGNJQLPreviewModeGetInfo ||
+    if(previewMode == kGNJQLPreviewModeGetInfo ||
        previewMode == kGNJQLPreviewModeCoverFlow) {
       return noErr;
     }
