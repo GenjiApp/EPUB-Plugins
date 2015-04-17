@@ -57,5 +57,30 @@
 	<false/>
 	<key>QLThumbnailMinimumSize</key>
 	<real>17</real>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.item</string>
+				<string>public.composite-content</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeIdentifier</key>
+			<string>org.idpf.epub-container</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.mime-type</key>
+				<array>
+					<string>application/epub+zip</string>
+				</array>
+				<key>public.filename-extension</key>
+				<array>
+					<string>epub</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>
