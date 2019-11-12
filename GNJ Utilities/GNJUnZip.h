@@ -16,6 +16,7 @@
 /** The items contained in the zip file. The array of `NSString` objects. */
 @property (nonatomic, readonly) NSArray *items;
 
+- (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithZipFile:(NSString *)path NS_DESIGNATED_INITIALIZER;
 - (NSData *)dataWithContentsOfFile:(NSString *)path;
 

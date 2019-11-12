@@ -25,6 +25,7 @@
 /** An identifier of a media overlay item. */
 @property (nonatomic, copy, readonly) NSString *mediaOverlay;
 
+- (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithItemNode:(NSXMLNode *)itemNode basePath:(NSString *)basePath NS_DESIGNATED_INITIALIZER;
 
 @end

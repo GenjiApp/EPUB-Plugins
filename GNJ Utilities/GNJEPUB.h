@@ -29,6 +29,7 @@ extern NSString * const GNJEPUBContentTypeUTI;
 /** The cover image of the EPUB. `NSImage` object or `nil`. */
 @property (nonatomic, strong, readonly) NSImage *coverImage;
 
+- (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithFile:(NSString *)path NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithURL:(NSURL *)url;
 - (NSData *)dataWithContentsOfFile:(NSString *)path;

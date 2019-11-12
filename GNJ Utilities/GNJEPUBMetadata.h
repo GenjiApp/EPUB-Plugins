@@ -26,6 +26,7 @@
 @property (nonatomic, readonly) NSDate *publicationDate;
 @property (nonatomic, readonly) NSDate *lastModifiedDate;
 
+- (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithOPFXMLDocument:(NSXMLDocument *)OPFXMLDocument NS_DESIGNATED_INITIALIZER;
 
 @end
