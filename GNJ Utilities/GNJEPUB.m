@@ -57,7 +57,7 @@ NSString * const GNJEPUBContentTypeUTI = @"org.idpf.epub-container";
     }
     NSXMLNode *fullPathAttributeNode = fullPathAttributeNodes[0];
     NSString *OPFFilePath = [fullPathAttributeNode.stringValue stringByTrimmingCharactersInSet:whitespaceAndNewlineCharacterSet];
-    OPFFilePath = [OPFFilePath stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    OPFFilePath = [OPFFilePath stringByRemovingPercentEncoding];
 
     NSData *OPFFileData = [unzip dataWithContentsOfFile:OPFFilePath];
     if(!OPFFileData) {
@@ -179,7 +179,7 @@ NSString * const GNJEPUBContentTypeUTI = @"org.idpf.epub-container";
   }
 
   NSString *coverImagePath = [hrefAttributeNode.stringValue stringByTrimmingCharactersInSet:whitespaceAndNewlineCharacterSet];
-  coverImagePath = [coverImagePath stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+  coverImagePath = [coverImagePath stringByRemovingPercentEncoding];
   if(!coverImagePath.absolutePath) {
     NSString *basePath = [self.OPFFilePath stringByDeletingLastPathComponent];
     coverImagePath = [basePath stringByAppendingPathComponent:coverImagePath];

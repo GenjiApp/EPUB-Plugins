@@ -36,7 +36,7 @@
     if(!path.absolutePath) {
       path = [basePath stringByAppendingPathComponent:path];
     }
-    path = [path stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    path = [path stringByRemovingPercentEncoding];
     if(!path.length) {
       return nil;
     }

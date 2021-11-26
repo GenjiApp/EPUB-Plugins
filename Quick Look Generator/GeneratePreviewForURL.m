@@ -184,7 +184,7 @@ static NSXMLElement *generateDivElementOfXHTMLContentDocument(QLPreviewRequestRe
     for(NSXMLNode *referenceAttributeNode in referenceAttributeNodes) {
       @autoreleasepool {
         NSString *additionalResourcePath = [referenceAttributeNode.stringValue stringByTrimmingCharactersInSet:whitespaceAndNewlineCharacterSet];
-        additionalResourcePath = [additionalResourcePath stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        additionalResourcePath = [additionalResourcePath stringByRemovingPercentEncoding];
         if(!additionalResourcePath.length) {
           continue;
         }
@@ -249,7 +249,7 @@ static NSXMLElement *generateDivElementOfXHTMLContentDocument(QLPreviewRequestRe
       else if([nodeName isEqualToString:@"link"] && epub) {
         NSXMLNode *hrefAttributeNode = [styleRelatedNode gnj_attributeNodeForLocalName:@"href"];
         NSString *cssPath = [hrefAttributeNode.stringValue stringByTrimmingCharactersInSet:whitespaceAndNewlineCharacterSet];
-        cssPath = [cssPath stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        cssPath = [cssPath stringByRemovingPercentEncoding];
         if(!cssPath.length) {
           continue;
         }
