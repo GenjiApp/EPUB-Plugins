@@ -12,14 +12,14 @@
 		B66A9F851AC0416200B8ED9A /* GNJUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B66A9F821AC0416200B8ED9A /* GNJUtilities.m */; };
 		B673C1971AA5D914007A316F /* schema.xml in Resources */ = {isa = PBXBuildFile; fileRef = B673C1961AA5D914007A316F /* schema.xml */; };
 		B673C1B41AA7F1D6007A316F /* GNJEPUB.m in Sources */ = {isa = PBXBuildFile; fileRef = B692E8431AA5A81A00BEBA6B /* GNJEPUB.m */; };
-		B673C1B51AA7F1FD007A316F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B692E86D1AA5CC7000BEBA6B /* libz.dylib */; };
 		B673C1B61AA7F2C2007A316F /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = B692E8731AA5CE1300BEBA6B /* ioapi.c */; };
 		B673C1B71AA7F2C2007A316F /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = B692E8751AA5CE1300BEBA6B /* unzip.c */; };
 		B673C1B81AA7F4E9007A316F /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = B692E8731AA5CE1300BEBA6B /* ioapi.c */; };
 		B673C1B91AA7F4E9007A316F /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = B692E8751AA5CE1300BEBA6B /* unzip.c */; };
 		B673C1BA1AA7F4EE007A316F /* GNJEPUB.m in Sources */ = {isa = PBXBuildFile; fileRef = B692E8431AA5A81A00BEBA6B /* GNJEPUB.m */; };
-		B673C1BB1AA825B1007A316F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B692E86D1AA5CC7000BEBA6B /* libz.dylib */; };
 		B6767F181AC484B8006B4E1C /* GNJEPUBMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = B66A9F7F1ABFE78000B8ED9A /* GNJEPUBMetadata.m */; };
+		B6888583275622F700781BC9 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B6888582275622E700781BC9 /* libz.tbd */; };
+		B68885842756230100781BC9 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B6888582275622E700781BC9 /* libz.tbd */; };
 		B692E79B1AA5967C00BEBA6B /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = B692E79A1AA5967C00BEBA6B /* main.c */; };
 		B692E79D1AA5967C00BEBA6B /* GetMetadataForFile.m in Sources */ = {isa = PBXBuildFile; fileRef = B692E79C1AA5967C00BEBA6B /* GetMetadataForFile.m */; };
 		B692E7AF1AA596E000BEBA6B /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = B692E7AE1AA596E000BEBA6B /* GenerateThumbnailForURL.m */; };
@@ -50,6 +50,7 @@
 		B66A9F9A1AC1086100B8ED9A /* package.opf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = package.opf; sourceTree = "<group>"; };
 		B66A9F9B1AC1088C00B8ED9A /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		B673C1961AA5D914007A316F /* schema.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = schema.xml; sourceTree = "<group>"; };
+		B6888582275622E700781BC9 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		B692E7961AA5967B00BEBA6B /* EPUB.mdimporter */ = {isa = PBXFileReference; explicitFileType = "wrapper.spotlight-importer"; includeInIndex = 0; path = EPUB.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
 		B692E7991AA5967C00BEBA6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B692E79A1AA5967C00BEBA6B /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		B692E7B21AA596E000BEBA6B /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		B692E8411AA5A81A00BEBA6B /* GNJUnZip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GNJUnZip.h; sourceTree = "<group>"; };
 		B692E8431AA5A81A00BEBA6B /* GNJEPUB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GNJEPUB.m; sourceTree = "<group>"; };
-		B692E86D1AA5CC7000BEBA6B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		B692E8731AA5CE1300BEBA6B /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
 		B692E8741AA5CE1300BEBA6B /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
 		B692E8751AA5CE1300BEBA6B /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B673C1B51AA7F1FD007A316F /* libz.dylib in Frameworks */,
+				B68885842756230100781BC9 /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B673C1BB1AA825B1007A316F /* libz.dylib in Frameworks */,
+				B6888583275622F700781BC9 /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +97,6 @@
 		B608114A1AB0806300C98C17 /* GNJ Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				B692E86D1AA5CC7000BEBA6B /* libz.dylib */,
 				B692E86A1AA5A90200BEBA6B /* minizip */,
 				B692E8411AA5A81A00BEBA6B /* GNJUnZip.h */,
 				B69DF62C1ACBD23000DA47E8 /* GNJUnZip.m */,
@@ -146,6 +145,14 @@
 			path = OEBPS;
 			sourceTree = "<group>";
 		};
+		B6888581275622E700781BC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6888582275622E700781BC9 /* libz.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B692E71A1AA5791500BEBA6B = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +162,7 @@
 				B692E7AB1AA596E000BEBA6B /* Quick Look Generator */,
 				B66A9F8E1AC1086100B8ED9A /* Test EPUB */,
 				B692E7261AA5793500BEBA6B /* Products */,
+				B6888581275622E700781BC9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
