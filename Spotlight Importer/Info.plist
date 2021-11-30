@@ -11,6 +11,7 @@
 			<string>MDImporter</string>
 			<key>LSItemContentTypes</key>
 			<array>
+				<string>com.apple.ibooks.epub</string>
 				<string>org.idpf.epub-container</string>
 			</array>
 		</dict>
@@ -51,6 +52,22 @@
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>UTImportedTypeDeclarations</key>
 	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>com.apple.package</string>
+				<string>public.composite-content</string>
+			</array>
+			<key>UTTypeIdentifier</key>
+			<string>com.apple.ibooks.epub</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>epub</string>
+				</array>
+			</dict>
+		</dict>
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>

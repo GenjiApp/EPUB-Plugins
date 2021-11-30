@@ -56,7 +56,8 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
 {
   @autoreleasepool
   {
-    if(![(__bridge NSString *)contentTypeUTI isEqualToString:GNJEPUBContentTypeUTI]) {
+    if(![(__bridge NSString *)contentTypeUTI isEqualToString:GNJEPUBIDPFContentTypeUTI] &&
+       ![(__bridge NSString *)contentTypeUTI isEqualToString:GNJEPUBAppleContentTypeUTI]) {
       return noErr;
     }
 

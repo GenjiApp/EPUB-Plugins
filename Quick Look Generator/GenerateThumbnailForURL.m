@@ -17,7 +17,8 @@ OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thum
 {
   @autoreleasepool
   {
-    if(![(__bridge NSString *)contentTypeUTI isEqualToString:GNJEPUBContentTypeUTI]) {
+    if(![(__bridge NSString *)contentTypeUTI isEqualToString:GNJEPUBIDPFContentTypeUTI] &&
+       ![(__bridge NSString *)contentTypeUTI isEqualToString:GNJEPUBAppleContentTypeUTI]) {
       return noErr;
     }
 

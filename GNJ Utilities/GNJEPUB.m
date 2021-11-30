@@ -11,7 +11,8 @@
 #import "GNJUnZip.h"
 #import "GNJUtilities.h"
 
-NSString * const GNJEPUBContentTypeUTI = @"org.idpf.epub-container";
+NSString * const GNJEPUBIDPFContentTypeUTI = @"org.idpf.epub-container";
+NSString * const GNJEPUBAppleContentTypeUTI = @"com.apple.ibooks.epub";
 
 @interface GNJEPUB ()
 

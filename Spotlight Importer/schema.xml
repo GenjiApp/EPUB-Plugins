@@ -49,6 +49,47 @@
       </displayattrs>
 
     </type>
+
+    <type name="com.apple.ibooks.epub">
+
+      <allattrs>
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemKeywords
+        kMDItemDescription
+        kMDItemHeadline
+        kMDItemPublishers
+        kMDItemOrganizations
+        kMDItemContributors
+        kMDItemIdentifier
+        kMDItemLanguages
+        kMDItemCoverage
+        kMDItemCopyright
+        kMDItemRights
+        kMDItemTextContent
+        kMDItemNumberOfPages
+        kMDItemContentCreationDate
+        kMDItemContentModificationDate
+        com_genjiapp_Murasaki_mdimporter_EPUB_EPUBVersion
+      </allattrs>
+
+      <displayattrs>
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemContributors
+        kMDItemPublishers
+        kMDItemCopyright
+        kMDItemLanguages
+        kMDItemNumberOfPages
+        kMDItemKeywords
+        com_genjiapp_Murasaki_mdimporter_EPUB_EPUBVersion
+        kMDItemIdentifier
+        kMDItemContentCreationDate
+        kMDItemContentModificationDate
+        kMDItemDescription
+      </displayattrs>
+
+    </type>
   </types>
 </schema>
 

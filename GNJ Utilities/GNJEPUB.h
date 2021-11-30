@@ -10,7 +10,8 @@
 #import "GNJEPUBManifestItem.h"
 #import "GNJEPUBMetadata.h"
 
-extern NSString * const GNJEPUBContentTypeUTI;
+extern NSString * const GNJEPUBIDPFContentTypeUTI;
+extern NSString * const GNJEPUBAppleContentTypeUTI;
 
 @interface GNJEPUB : NSObject
 
