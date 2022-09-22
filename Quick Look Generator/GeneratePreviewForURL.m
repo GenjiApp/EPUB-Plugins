@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, GNJQLPreviewMode) {
 static NSString * const kGNJQLPreviewModeKey = @"QLPreviewMode";
 
 /** 順次読み込んでいくコンテントドキュメントのバイト数の積算が、これを超えた時点で以降のコンテントドキュメントは読み込まない（ざっくり）。 */
-static const NSUInteger kMaxLenghOfContents = 1024 * 1024;
+static const NSUInteger kMaxLengthOfContents = 1024 * 1024;
 
 /**
  * Returns a <div> element contains child element nodes of content document's <body> element.
@@ -116,7 +116,7 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
           return noErr;
         }
 
-        if(currentLengthOfContents > kMaxLenghOfContents) {
+        if(currentLengthOfContents > kMaxLengthOfContents) {
           break;
         }
       }
@@ -216,7 +216,7 @@ static NSXMLElement *generateDivElementOfXHTMLContentDocument(QLPreviewRequestRe
         attachments[additionalResourcePath] = attachment;
         if(additionalResourceDataLength) {
           *additionalResourceDataLength += additionalResourceData.length;
-          if(*additionalResourceDataLength > kMaxLenghOfContents) {
+          if(*additionalResourceDataLength > kMaxLengthOfContents) {
             break;
           }
         }
