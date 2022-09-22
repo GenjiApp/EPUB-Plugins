@@ -17,8 +17,10 @@ typedef NS_ENUM(NSInteger, GNJQLPreviewMode) {
 /** The key name which is used by `options` dictionary of `GeneratePreviewForURL` function (undocumented). */
 static NSString * const kGNJQLPreviewModeKey = @"QLPreviewMode";
 
+static NSString * const kMaxLengthOfContentsKey = @"maxLengthOfContents";
+
 /** 順次読み込んでいくコンテントドキュメントのバイト数の積算が、これを超えた時点で以降のコンテントドキュメントは読み込まない（ざっくり）。 */
-static const NSUInteger kMaxLengthOfContents = 1024 * 1024;
+static NSUInteger maxLengthOfContents(QLPreviewRequestRef preview);
 
 /**
  * Returns a <div> element contains child element nodes of content document's <body> element.
@@ -116,7 +118,7 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
           return noErr;
         }
 
-        if(currentLengthOfContents > kMaxLengthOfContents) {
+        if(currentLengthOfContents > maxLengthOfContents(preview)) {
           break;
         }
       }
@@ -157,6 +159,27 @@ void CancelPreviewGeneration(void *thisInterface, QLPreviewRequestRef preview)
 
 #pragma mark -
 #pragma mark Static Functions
+static NSUInteger maxLengthOfContents(QLPreviewRequestRef preview)
+{
+  static NSUInteger maxLengthOfContents = 0;
+
+  if(maxLengthOfContents == 0) {
+    CFBundleRef bundleRef = QLPreviewRequestGetGeneratorBundle(preview);
+    CFStringRef appId = CFBundleGetIdentifier(bundleRef);
+    CFStringRef key = (__bridge CFStringRef)kMaxLengthOfContentsKey;
+    CFPropertyListRef plistRef = CFPreferencesCopyAppValue(key, appId);
+    if(plistRef != NULL) {
+      maxLengthOfContents = [(__bridge NSNumber *)plistRef integerValue];
+      CFRelease(plistRef);
+    }
+    else {
+      maxLengthOfContents = 1024 * 1024;
+    }
+  }
+
+  return maxLengthOfContents;
+}
+
 static NSXMLElement *generateDivElementOfXHTMLContentDocument(QLPreviewRequestRef preview, NSData *contentDocumentData, GNJEPUB *epub, NSString *basePath, NSMutableDictionary *attachments, NSUInteger *additionalResourceDataLength)
 {
   if(!contentDocumentData) {
@@ -216,7 +239,7 @@ static NSXMLElement *generateDivElementOfXHTMLContentDocument(QLPreviewRequestRe
         attachments[additionalResourcePath] = attachment;
         if(additionalResourceDataLength) {
           *additionalResourceDataLength += additionalResourceData.length;
-          if(*additionalResourceDataLength > kMaxLengthOfContents) {
+          if(*additionalResourceDataLength > maxLengthOfContents(preview)) {
             break;
           }
         }
