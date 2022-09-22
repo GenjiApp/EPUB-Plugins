@@ -55,4 +55,24 @@ The EPUB metadata are assigned to OS X metadata as follows:
 
 ## Quick Look generator
 
-表紙画像をサムネイルアイコンに、プレヴューはざっくり 1MB 分を HTML として生成します。
+| Thumbnail | Preview |
+| --------- | ------- |
+| Cover image of EPUB | Loading limit: about 1MB
+
+### Change Loading Limit
+
+You can change the loading limit. Run command as follows:
+
+```
+$ defaults write com.genjiapp.Murasaki.qlgenerator.EPUB maxLengthOfContents -integer 2000000
+```
+
+The last piece above is in byte. In this case, the loading limit will change to about 2MB.
+
+To reset loading limit, run following command:
+
+```
+$ defaults delete com.genjiapp.Murasaki.qlgenerator.EPUB maxLengthOfContents
+```
+
+The default loading limit is about 1MB.
