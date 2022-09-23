@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, GNJQLPreviewMode) {
 static NSString * const kGNJQLPreviewModeKey = @"QLPreviewMode";
 
 /** 順次読み込んでいくコンテントドキュメントのバイト数の積算が、これを超えた時点で以降のコンテントドキュメントは読み込まない（ざっくり）。 */
-static const NSUInteger kMaxLengthOfContents = 1024 * 1024;
+static const NSUInteger kMaxLengthOfContents = 1024 * 1024 * 50;
 
 /** ひとつのコンテントドキュメント内の画像等のリソース読み込みの限度数。 */
 static const NSUInteger kMaxNumberOfAddtionalResources = 20;

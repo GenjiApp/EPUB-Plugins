@@ -57,4 +57,4 @@ The EPUB metadata are assigned to OS X metadata as follows:
 
 | Thumbnail | Preview |
 | --------- | ------- |
-| Cover image of EPUB | Loading limit: about 1MB
+| Cover image of EPUB | Loading limit: about 50MB
