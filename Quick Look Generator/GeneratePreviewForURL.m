@@ -20,6 +20,9 @@ static NSString * const kGNJQLPreviewModeKey = @"QLPreviewMode";
 /** 順次読み込んでいくコンテントドキュメントのバイト数の積算が、これを超えた時点で以降のコンテントドキュメントは読み込まない（ざっくり）。 */
 static const NSUInteger kMaxLengthOfContents = 1024 * 1024;
 
+/** ひとつのコンテントドキュメント内の画像等のリソース読み込みの限度数。 */
+static const NSUInteger kMaxNumberOfAddtionalResources = 20;
+
 /**
  * Returns a <div> element contains child element nodes of content document's <body> element.
  *
@@ -182,6 +185,12 @@ static NSXMLElement *generateDivElementOfXHTMLContentDocument(QLPreviewRequestRe
     xpath = @"//*[local-name()='img']/@*[local-name()='src']"
     @"|//*[local-name()='svg']/*[local-name()='image']/@*[local-name()='href']";
     NSArray *referenceAttributeNodes = [bodyElement nodesForXPath:xpath error:NULL];
+
+    // 画像の数が多い場合は切り詰める
+    if(referenceAttributeNodes.count > kMaxNumberOfAddtionalResources) {
+      referenceAttributeNodes = [referenceAttributeNodes subarrayWithRange:NSMakeRange(0, kMaxNumberOfAddtionalResources - 1)];
+    }
+
     for(NSXMLNode *referenceAttributeNode in referenceAttributeNodes) {
       @autoreleasepool {
         NSString *additionalResourcePath = [referenceAttributeNode.stringValue stringByTrimmingCharactersInSet:whitespaceAndNewlineCharacterSet];
